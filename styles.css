@@ -1,5 +1,5 @@
 :root {
-    --main-color: #146ad4;
+    --main-color: #1b95c9;
     --accent-color: #ee940e;
     --background-color: #aaaaaa;
     --content-color: #fafafa;
@@ -31,6 +31,7 @@
     width: var(--item-logo-size);
     height: var(--item-logo-size);
     background-color: lightcoral;
+    margin-left: 10px;
 }
 
 /* SIDEBAR */
@@ -47,8 +48,26 @@
     gap: var(--sidebar-item-size);
 }
 
+.logo-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-container .logo {
+    background-color: blueviolet;
+    height: 70%;
+    aspect-ratio: 1 / 1;
+    margin-left: 10px;
+}
+
 .menu-option {
     height: var(--sidebar-item-size);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
 }
 
 nav div,
@@ -72,10 +91,6 @@ nav div,
     gap: 20px;
     justify-content: flex-start;
     align-items: center;
-}
-
-.header .search-icon {
-    margin-left: 10px;
 }
 
 /* header small profile */
