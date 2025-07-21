@@ -4,6 +4,7 @@
     --background-color: #aaaaaa;
     --content-color: #fafafa;
     
+    --main-gap: 30px;
     --item-logo-size: 30px;
 
     --sidebar-size: max(200px, 16%);
@@ -80,7 +81,7 @@ nav div,
     grid-area: 1 / 2 / 2 / 3;
 
     display: grid;
-    grid-template: 2fr 3fr / 30px 2fr 1fr;
+    grid-template: 2fr 3fr / var(--main-gap) 2fr 1fr;
 }
 
 /* header search */
@@ -100,7 +101,7 @@ nav div,
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 30px;
+    gap: var(--main-gap);
 }
 
 .header .small-pfp {
@@ -152,4 +153,38 @@ nav div,
     background-color: var(--background-color);
 
     grid-area: 2 / 2 / 3 / 3;
+
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--main-gap)
+}
+
+.sidecards {
+    display: grid;
+    grid-template-rows: 300px 300px 1fr;
+    background-color: var(--content-color);
+}
+
+.body .sidecards > .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.announcement {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.sidecards .line {
+    height: 2px;
+    width: 80%;
+    align-self: center;
+    background-color: var(--background-color);
+}
+
+.sidecards *,
+.body .card {
+    border: 1px red solid;
 }
