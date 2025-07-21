@@ -5,6 +5,8 @@
     --content-color: #fafafa;
     
     --main-gap: 30px;
+    --medium-gap: 20px;
+    --small-gap: 10px;
     --item-logo-size: 30px;
 
     --sidebar-size: max(200px, 16%);
@@ -32,7 +34,7 @@
     width: var(--item-logo-size);
     height: var(--item-logo-size);
     background-color: lightcoral;
-    margin-left: 10px;
+    margin-left: var(--small-gap);
 }
 
 /* SIDEBAR */
@@ -53,14 +55,14 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 10px;
+    gap: var(--small-gap);
 }
 
 .logo-container .logo {
     background-color: blueviolet;
     height: 70%;
     aspect-ratio: 1 / 1;
-    margin-left: 10px;
+    margin-left: var(--small-gap);
 }
 
 .menu-option {
@@ -68,7 +70,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 10px;
+    gap: var(--small-gap);
 }
 
 nav div,
@@ -89,7 +91,7 @@ nav div,
     grid-column: 2;
 
     display: flex;
-    gap: 20px;
+    gap: var(--medium-gap);
     justify-content: flex-start;
     align-items: center;
 }
@@ -111,7 +113,7 @@ nav div,
 }
 
 .header > .small-profile > .profile-name {
-    margin-right: 20px;
+    margin-right: var(--medium-gap);
 }
 
 /* header big profile */
@@ -124,7 +126,7 @@ nav div,
 
 .header .big-pfp {
     background-color: blueviolet;
-    margin: 10px;
+    margin: var(--small-gap);
 }
 
 .header .name-container {
@@ -161,8 +163,7 @@ nav div,
 
 .sidecards {
     display: grid;
-    grid-template-rows: 300px 300px 1fr;
-    background-color: var(--content-color);
+    grid-template-rows: 30px 280px 30px 280px 1fr;
 }
 
 .body .sidecards > .card {
@@ -170,18 +171,48 @@ nav div,
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-}
 
+    margin-bottom: var(--small-gap);
+    background-color: var(--content-color);
+}
+ /* announcements */
 .announcement {
     margin-left: 10%;
     margin-right: 10%;
 }
 
-.sidecards .line {
+.announcement-card .line {
     height: 2px;
-    width: 80%;
+    width: 86%;
     align-self: center;
     background-color: var(--background-color);
+}
+
+/* Trending */
+.trending-card .small-profile {
+    height: 20%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    display: flex;
+    justify-content: flex-start;
+    gap: var(--medium-gap);
+}
+
+.trending-card .small-pfp {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: blueviolet;
+}
+
+.trending-card .name-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    width: 100%;
 }
 
 .sidecards *,
