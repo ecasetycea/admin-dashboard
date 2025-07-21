@@ -43,15 +43,20 @@
     height: var(--sidebar-item-size);
 }
 
-nav div {border: 1px red solid;}
+nav div,
+.header div {border: 1px red solid;}
 
-
-.header {
+/* HEADER */
+.header {   
     background-color: var(--content-color);
 
     grid-area: 1 / 2 / 2 / 3;
+
+    display: grid;
+    grid-template: 1fr 2fr / 2fr 1fr;
 }
 
+/* BODY (CARDS) */
 .body {
     background-color: var(--background-color);
 
