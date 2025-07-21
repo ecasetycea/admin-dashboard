@@ -3,12 +3,14 @@
     --accent-color: #ee940e;
     --background-color: #aaaaaa;
     --content-color: #fafafa;
+    
+    --item-logo-size: 30px;
 
-    --header-size: max(150px, 20%);
     --sidebar-size: max(200px, 16%);
     --sidebar-logo-size: 80px;
     --sidebar-item-size: 40px;
-    --sidebar-item-logo-size: 30px;
+
+    --header-size: max(150px, 20%);
 }
 
 * {
@@ -23,6 +25,12 @@
 
     display: grid;
     grid-template: var(--header-size) 1fr / var(--sidebar-size) 1fr;
+}
+
+.icon {
+    width: var(--item-logo-size);
+    height: var(--item-logo-size);
+    background-color: lightcoral;
 }
 
 /* SIDEBAR */
@@ -53,7 +61,75 @@ nav div,
     grid-area: 1 / 2 / 2 / 3;
 
     display: grid;
-    grid-template: 1fr 2fr / 2fr 1fr;
+    grid-template: 1fr 2fr / 30px 2fr 1fr;
+}
+
+/* header search */
+.header .search {
+    grid-column: 2;
+
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header .search-icon {
+    margin-left: 10px;
+}
+
+/* header small profile */
+.header .small-profile {
+    grid-column: 3;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+}
+
+.header .small-pfp {
+    background-color: blueviolet;
+    height: 90%;
+    aspect-ratio: 1 / 1;
+}
+
+.header > .small-profile > .profile-name {
+    margin-right: 20px;
+}
+
+/* header big profile */
+.header .big-profile {
+    grid-column: 2;
+
+    display: grid;
+    grid-template-columns: 100px 1fr;
+}
+
+.header .big-pfp {
+    background-color: blueviolet;
+    margin: 10px;
+}
+
+.header .name-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* header buttons */
+.header .buttons {
+    grid-column: 3;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header .buttons button {
+    height: 40%;
+    width: 20%;
 }
 
 /* BODY (CARDS) */
