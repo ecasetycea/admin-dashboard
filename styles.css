@@ -33,7 +33,7 @@
     --menu-font-size: 18px;
     --logo-font-size: 24px;
 
-    --small-pfp-size: calc(var(--header-size) / 5);
+    --small-pfp-size: calc(var(--header-size) / 5 - 5px);
     --big-pfp-size: calc(3 * var(--small-pfp-size));
 }
 
