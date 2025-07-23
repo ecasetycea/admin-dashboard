@@ -187,6 +187,7 @@ nav div,
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-template-rows: var(--main-gap);
     grid-auto-rows: 200px;
+    gap: var(--medium-gap);
 }
 
 .body .cards > h3 {
@@ -195,12 +196,18 @@ nav div,
 
 .body .project-card {
     display: grid;
-    grid-template-rows: var(--medium-gap) 1fr var(--item-logo-size);
+    grid-template-rows:
+        var(--medium-gap)
+        var(--medium-gap)
+        1fr
+        var(--item-logo-size)
+        var(--medium-gap);
     grid-template-columns: var(--small-gap) 1fr;
     
     background-color: var(--accent-color)
 }
 
+/* keep left column empty with accent color background */
 .body .project-card > * {
     grid-column: 2;
     background-color: var(--content-color)
@@ -209,6 +216,11 @@ nav div,
 .body .project-card .icons {
     display: flex;
     justify-content: flex-end;
+}
+
+.project-card > * {
+    padding-left: var(--medium-gap);
+    padding-right: var(--medium-gap);
 }
 
 /* announcements */
