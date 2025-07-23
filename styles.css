@@ -23,15 +23,18 @@
     --tiny-gap: 5px;
     --item-logo-size: 30px;
 
-    --sidebar-size: max(200px, 16%);
+    --sidebar-size: max(200px, 16vw);
     --sidebar-logo-size: 80px;
     --sidebar-item-size: 40px;
 
-    --header-size: max(150px, 18%);
+    --header-size: max(150px, 18vh);
     --card-font-size: 12px;
     --card-title-font-size: 16px;
     --menu-font-size: 18px;
     --logo-font-size: 24px;
+
+    --small-pfp-size: calc(var(--header-size) / 5);
+    --big-pfp-size: calc(3 * var(--small-pfp-size));
 }
 
 * {
@@ -182,13 +185,23 @@
 }
 
 .header .small-pfp {
-    background-color: blueviolet;
-    height: 80%;
+    height: var(--small-pfp-size);
+    flex: none;
     aspect-ratio: 1 / 1;
 }
 
 .header > .small-profile > .profile-name {
     margin-right: var(--medium-gap);
+}
+
+.small-pfp > #pfp1 {
+    height: var(--small-pfp-size);
+    border-radius: 50%;
+}
+
+.header .small-profile .profile-name {
+    font-weight: bold;
+    font-size: var(--card-title-font-size);
 }
 
 /* header big profile */
@@ -200,9 +213,17 @@
 }
 
 .header .big-pfp {
-    background-color: blueviolet;
     aspect-ratio: 1 / 1;
+    /* center bothersome image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.big-pfp > #pfp1 {
+    height: var(--big-pfp-size);
+    flex: none;
+    border-radius: 50%;
 }
 
 .header .name-container {
@@ -210,6 +231,18 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+
+    gap: var(--small-gap);
+}
+
+.header .name-container .greeting {
+    font-weight: bold;
+    font-size: var(--card-font-size);
+}
+
+.header .name-container .profile-name {
+    font-weight: bold;
+    font-size: var(--logo-font-size);
 }
 
 /* header buttons */
