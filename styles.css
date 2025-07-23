@@ -86,7 +86,7 @@
 
 .menu-option {
     height: calc(var(--sidebar-item-size) - var(--tiny-gap));
-    padding-left: var(--small-gap);
+    padding: var(--tiny-gap) var(--small-gap);
     
     width: calc(100% - 2*var(--small-gap));
     margin: var(--tiny-gap) var(--small-gap);
