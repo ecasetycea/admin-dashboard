@@ -24,6 +24,10 @@
     --sidebar-item-size: 40px;
 
     --header-size: max(150px, 18%);
+    --card-font-size: 24px;
+    --card-title-font-size: 32px;
+    --menu-font-size: 36px;
+    --logo-font-size: 48px;
 }
 
 * {
