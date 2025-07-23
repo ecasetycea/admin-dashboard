@@ -11,7 +11,7 @@
 
     --main-color: #1b95c9;
     --accent-color: #ee940e;
-    --background-color: #d5d5d5;
+    --background-color: #dddddd;
     --content-color: #fafafa;
     
     --main-color-svg-filter: invert(47%) sepia(100%) saturate(374%) hue-rotate(151deg) brightness(88%) contrast(101%);
@@ -147,9 +147,28 @@
     grid-column: 2;
 
     display: flex;
-    gap: var(--medium-gap);
+    gap: var(--small-gap);
     justify-content: flex-start;
     align-items: center;
+}
+
+#search {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 50%;
+    height: 60%;
+    border-radius: calc(var(--sidebar-item-size) / 2);
+    padding: 0 1em;
+
+    border: none;
+    background-color: var(--background-color);
+}
+
+#search:focus { 
+    outline: none;
+    border: 2px solid var(--main-color);
 }
 
 /* header small profile */
@@ -325,6 +344,7 @@
 
 
 .body .cards * { border: 1px green solid;}
+
 
 .header div,
 .sidecards *,
