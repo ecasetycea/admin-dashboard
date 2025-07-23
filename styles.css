@@ -1,7 +1,7 @@
 :root {
     --main-color: #1b95c9;
     --accent-color: #ee940e;
-    --background-color: #cccccc;
+    --background-color: #d5d5d5;
     --content-color: #fafafa;
     
     --main-gap: 30px;
@@ -13,7 +13,7 @@
     --sidebar-logo-size: 80px;
     --sidebar-item-size: 40px;
 
-    --header-size: max(150px, 20%);
+    --header-size: max(150px, 18%);
 }
 
 * {
@@ -153,6 +153,7 @@ nav div,
 /* BODY (CARDS) */
 .body {
     background-color: var(--background-color);
+    padding-top: var(--medium-gap);
 
     grid-area: 2 / 2 / 3 / 3;
 
@@ -163,7 +164,7 @@ nav div,
 
 .sidecards {
     display: grid;
-    grid-template-rows: 30px 280px 30px 280px 1fr;
+    grid-template-rows: repeat(2, var(--main-gap) 280px) 1fr;
 }
 
 .body .sidecards > .card {
@@ -175,7 +176,42 @@ nav div,
     margin-bottom: var(--small-gap);
     background-color: var(--content-color);
 }
- /* announcements */
+
+/* projects */
+.body .cards-container {
+    margin-left: var(--main-gap);
+}
+
+.body .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: var(--main-gap);
+    grid-auto-rows: 200px;
+}
+
+.body .cards > h3 {
+    grid-column: 1 / -1;
+}
+
+.body .project-card {
+    display: grid;
+    grid-template-rows: var(--medium-gap) 1fr var(--item-logo-size);
+    grid-template-columns: var(--small-gap) 1fr;
+    
+    background-color: var(--accent-color)
+}
+
+.body .project-card > * {
+    grid-column: 2;
+    background-color: var(--content-color)
+}
+
+.body .project-card .icons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* announcements */
 .announcement {
     margin-left: 10%;
     margin-right: 10%;
@@ -215,7 +251,10 @@ nav div,
     width: 100%;
 }
 
+
+.body .cards * { border: 1px green solid;}
+
 .sidecards *,
-.body .card {
+.body .cards > * {
     border: 1px red solid;
 }
