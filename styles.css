@@ -14,11 +14,13 @@
     --background-color: #d5d5d5;
     --content-color: #fafafa;
     
+    --main-color-svg-filter: invert(47%) sepia(100%) saturate(374%) hue-rotate(151deg) brightness(88%) contrast(101%);
     --content-color-svg-filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(297deg) brightness(103%) contrast(96%);
     
     --main-gap: 30px;
     --medium-gap: 20px;
     --small-gap: 10px;
+    --tiny-gap: 5px;
     --item-logo-size: 30px;
 
     --sidebar-size: max(200px, 16%);
@@ -83,14 +85,25 @@
  
 
 .menu-option {
-    height: var(--sidebar-item-size);
-    margin-left: var(--small-gap);
+    height: calc(var(--sidebar-item-size) - var(--tiny-gap));
+    padding-left: var(--small-gap);
+    
+    width: calc(100% - 2*var(--small-gap));
+    margin: var(--tiny-gap) var(--small-gap);
+    
+    border-radius: 10px;
 
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: var(--medium-gap);
 }
+
+.menu-option.home,
+.menu-option.settings {margin-top: 0px;}
+
+.menu-option.privacy,
+.menu-option.communities {margin-bottom: 0px;}
 
 .logo-container .logo img,
 .menu .icon > img {
@@ -107,6 +120,16 @@
 
 .sidebar .menu-option p {
     font-size: var(--menu-font-size);
+}
+
+.sidebar .menu-option:hover {
+    background-color: var(--content-color);
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+.sidebar .menu-option:hover img {
+    filter: var(--main-color-svg-filter);
 }
 
 /* HEADER */
@@ -303,8 +326,6 @@
 
 .body .cards * { border: 1px green solid;}
 
-
-nav div,
 .header div,
 .sidecards *,
 .body .cards > * {
