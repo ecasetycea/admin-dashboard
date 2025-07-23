@@ -14,6 +14,8 @@
     --background-color: #d5d5d5;
     --content-color: #fafafa;
     
+    --content-color-svg-filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(297deg) brightness(103%) contrast(96%);
+    
     --main-gap: 30px;
     --medium-gap: 20px;
     --small-gap: 10px;
@@ -24,10 +26,10 @@
     --sidebar-item-size: 40px;
 
     --header-size: max(150px, 18%);
-    --card-font-size: 24px;
-    --card-title-font-size: 32px;
-    --menu-font-size: 36px;
-    --logo-font-size: 48px;
+    --card-font-size: 12px;
+    --card-title-font-size: 16px;
+    --menu-font-size: 18px;
+    --logo-font-size: 24px;
 }
 
 * {
@@ -49,7 +51,6 @@
 .icon {
     width: var(--item-logo-size);
     height: var(--item-logo-size);
-    background-color: lightcoral;
     margin-left: var(--small-gap);
 }
 
@@ -75,11 +76,11 @@
 }
 
 .logo-container .logo {
-    background-color: blueviolet;
     height: 70%;
     aspect-ratio: 1 / 1;
     margin-left: var(--small-gap);
 }
+ 
 
 .menu-option {
     height: var(--sidebar-item-size);
@@ -89,6 +90,23 @@
     align-items: center;
     justify-content: flex-start;
     gap: var(--medium-gap);
+}
+
+.logo-container .logo img,
+.menu .icon > img {
+    filter: var(--content-color-svg-filter);
+}
+
+.sidebar {
+    color: var(--content-color);
+}
+
+.sidebar .logo-container p {
+    font-size: var(--logo-font-size);
+}
+
+.sidebar .menu-option p {
+    font-size: var(--menu-font-size);
 }
 
 /* HEADER */
@@ -141,7 +159,8 @@
 
 .header .big-pfp {
     background-color: blueviolet;
-    margin: var(--small-gap);
+    aspect-ratio: 1 / 1;
+
 }
 
 .header .name-container {
