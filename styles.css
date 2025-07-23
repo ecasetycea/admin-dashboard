@@ -202,6 +202,30 @@
 .header .small-profile .profile-name {
     font-weight: bold;
     font-size: var(--card-title-font-size);
+    border: 2px solid var(--main-color);
+    border-radius: 14px;
+    padding: 2px 8px;
+
+    background-color: var(--main-color);
+    color: var(--content-color);
+}
+
+.header .small-profile .profile-name:hover {
+    background: var(--content-color);
+    color: var(--main-color);
+}
+
+.header .small-profile .notif-icon {
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.header .small-profile .notif-icon:hover {
+    background-color: var(--main-color);
+}
+
+.header .small-profile .notif-icon:hover > img {
+    filter: var(--content-color-svg-filter);
 }
 
 /* header big profile */
@@ -257,6 +281,23 @@
 .header .buttons button {
     height: 40%;
     width: 20%;
+
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    border: 3px solid var(--main-color);
+    border-radius: 20px;
+    background-color: var(--main-color);
+    color: var(--content-color);
+
+    font-weight: bold;
+    font-size: var(--card-title-font-size)
+}
+
+.header .buttons button:hover {
+    background-color: var(--content-color);
+    color: var(--main-color);
 }
 
 /* BODY (CARDS) */
@@ -379,7 +420,6 @@
 .body .cards * { border: 1px green solid;}
 
 
-.header div,
 .sidecards *,
 .body .cards > * {
     border: 1px red solid;
