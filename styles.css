@@ -37,6 +37,7 @@
     --card-border-radius: 16px;
 
     --small-pfp-size: calc(var(--header-size) / 5 - 5px);
+    --medium-pfp-size: calc(2 * var(--small-pfp-size));
     --big-pfp-size: calc(3 * var(--small-pfp-size));
 }
 
@@ -317,7 +318,8 @@
 
 .sidecards {
     display: grid;
-    grid-template-rows: repeat(2, var(--main-gap) 280px) 1fr;
+    grid-template-rows: repeat(2, var(--main-gap) 280px var(--small-gap)) 1fr;
+
     margin-right: var(--main-gap);
 }
 
@@ -336,11 +338,35 @@
     font-size: var(--card-font-size);
 }
 
-.body .sidecards > .announcement-card {
+.body .sidecards > .announcement-card,
+.body .sidecards > .trending-card {
     border-radius: var(--card-border-radius);
     padding-top: var(--small-gap);
     padding-bottom: var(--small-gap);
 }
+
+.sidecards .announcement-card + h3 {grid-row: 4;}
+.sidecards .trending-card {grid-row: 5;}
+
+
+.sidecards .trending-card img {
+    aspect-ratio: 1 / 1;
+    height: var(--medium-pfp-size);
+    border-radius: 50%;
+}
+
+.sidecards .trending-card .handle {
+    color: black;
+    font-size: var(--card-font-size);
+    font-weight: bold;
+
+    margin-bottom: var(--tiny-gap);
+}
+
+.sidecards .trending-card .small-profile {
+    padding-left: var(--small-gap);
+}
+
 
 /* projects */
 .body .cards-container {
@@ -418,7 +444,6 @@
 .trending-card .small-pfp {
     height: 100%;
     aspect-ratio: 1 / 1;
-    background-color: blueviolet;
 }
 
 .trending-card .name-container {
@@ -434,7 +459,7 @@
 .body .cards * { border: 1px green solid;}
 
 
-.sidecards .trending-card *,
+
 .body .cards > * {
     border: 1px red solid;
 }
