@@ -13,6 +13,7 @@
     --accent-color: #ee940e;
     --background-color: #dddddd;
     --content-color: #fafafa;
+    --card-text-color: #333;
     
     --main-color-svg-filter: invert(47%) sepia(100%) saturate(374%) hue-rotate(151deg) brightness(88%) contrast(101%);
     --content-color-svg-filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(297deg) brightness(103%) contrast(96%);
@@ -32,6 +33,8 @@
     --card-title-font-size: 16px;
     --menu-font-size: 18px;
     --logo-font-size: 24px;
+
+    --card-border-radius: 16px;
 
     --small-pfp-size: calc(var(--header-size) / 5 - 5px);
     --big-pfp-size: calc(3 * var(--small-pfp-size));
@@ -328,6 +331,17 @@
     background-color: var(--content-color);
 }
 
+.body .sidecards p {
+    color: var(--card-text-color);
+    font-size: var(--card-font-size);
+}
+
+.body .sidecards > .announcement-card {
+    border-radius: var(--card-border-radius);
+    padding-top: var(--small-gap);
+    padding-bottom: var(--small-gap);
+}
+
 /* projects */
 .body .cards-container {
     margin-left: var(--medium-gap);
@@ -420,7 +434,7 @@
 .body .cards * { border: 1px green solid;}
 
 
-.sidecards *,
+.sidecards .trending-card *,
 .body .cards > * {
     border: 1px red solid;
 }
